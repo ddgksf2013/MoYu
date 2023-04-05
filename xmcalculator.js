@@ -13,7 +13,7 @@
 [rewrite_local]
 
 # ～ 小明计算器解锁会员权限（2023-04-05）@ddgksf2013
-^http:\/\/jsq\.mingcalc\.cn\/XMGetMeCount\.ashx url script-response-body xmcalculator.js
+^http:\/\/jsq\.mingcalc\.cn\/XMGetMeCount\.ashx url script-response-body https://github.com/ddgksf2013/MoYu/raw/master/xmcalculator.js
 
 
 ***********************************/
