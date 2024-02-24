@@ -1,10 +1,10 @@
 /***********************************
 
 > 应用名称：Nicegram
-> 软件版本：1.3.8
+> 软件版本：1.5.6
 > 脚本作者：ddgksf2013
 > 微信账号：墨鱼手记
-> 更新时间：2023-08-19
+> 更新时间：2024-02-24
 > 通知频道：https://t.me/ddgksf2021
 > 贡献投稿：https://t.me/ddgksf2013_bot
 > 问题反馈：ddgksf2013@163.com
@@ -16,15 +16,15 @@
 
 [rewrite_local]
   
-# > Nicegram☆解锁会员权限（2023-08-19）@ddgksf2013
-https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-response text/json echo-response https://github.com/ddgksf2013/dev/raw/main/NicegramProCrack.js
-
+# > Nicegram☆解锁会员权限（2024-02-24）@ddgksf2013
+^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|telegram\/auth) url script-response-body https://github.com/ddgksf2013/MoYu/raw/master/NicegramProCrack.js
 
 [mitm] 
 
-hostname=restore-access.indream.app
+hostname=nicegram.cloud
 
 ***********************************/
 
 
-
+var body=$response.body.replace(/subscription":\w+/g,"subscription":true");
+$done({body});
