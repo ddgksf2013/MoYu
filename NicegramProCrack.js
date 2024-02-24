@@ -26,5 +26,5 @@ hostname=nicegram.cloud
 ***********************************/
 
 
-var body=$response.body.replace(/subscription":\w+/g,"subscription":true");
+var body=$response.body.replace(/subscription":\w+/g,'subscription":true');
 $done({body});
