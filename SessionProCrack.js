@@ -2,7 +2,7 @@
 
 > 应用名称：Session
 > 软件版本：2.9.15
-> 脚本作者：@Caster, @ddgksf2013
+> 脚本作者：@ddgksf2013, @Caster
 > 微信账号：墨鱼手记
 > 更新时间：2024-02-25
 > 通知频道：https://t.me/ddgksf2021
@@ -17,8 +17,9 @@
 [rewrite_local]
   
 # > Session☆解锁会员权限（2024-02-24）@ddgksf2013
-^https:\/\/api\.stayinsession\.com\/user\/detail url script-echo-response https://github.com/ddgksf2013/MoYu/raw/master/SessionProCrack.js
+^https:\/\/api\.stayinsession\.com\/user\/detail url script-response-body https://github.com/ddgksf2013/MoYu/raw/master/SessionProCrack.js
 (^https:\/\/api\.stayinsession\.com\/\?token=.*?&)(is_setapp\=false) url 302 $1is_setapp=true
+^https:\/\/api\.stayinsession\.com\/user\/detail url request-header (\r\n)If-None-Match:.+(\r\n) request-header $1$2
 
 [mitm] 
 
@@ -29,5 +30,4 @@ hostname=api.stayinsession.com
 
 
 
-var ddgksf2013 = {"id":"d6a5b8b3-7c03-4a7f-94d2-1c826e8c0e13","email":"ddgksf2013@163.com","subscription_status":"active","subscription_expiry_date":"2099-02-27T10:33:57Z","created_at":"2024-02-20T10:33:57Z"};
-$done({'body':JSON.stringify(ddgksf2013)}); 
+var obj=JSON.parse($response.body);obj.subscription_status="active",obj.subscription_expiry_date="2099-02-27T10:33:57Z",$done({body:JSON.stringify(obj)});
