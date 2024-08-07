@@ -5,7 +5,7 @@
 > 脚本作者：ddgksf2013
 > 微信账号：墨鱼手记
 > 解锁说明：无需登录，直接看文章，解锁的是文章阅读权限
-> 更新时间：2023-08-02
+> 更新时间：2024-08-07
 > 通知频道：https://t.me/ddgksf2021
 > 贡献投稿：https://t.me/ddgksf2013_bot
 > 问题反馈：ddgksf2013@163.com
@@ -17,7 +17,7 @@
 
 [rewrite_local]
   
-# > 财新周刊☆解锁阅读权限（2023-08-02）@ddgksf2013
+# > 财新周刊☆解锁阅读权限（2024-08-07）@ddgksf2013
 https?:\/\/ipadcms\.caixin\.com\/tmp\/articles url script-response-body https://github.com/ddgksf2013/MoYu/raw/master/CaiXinZhouKanProCrack.js
 
 
@@ -31,5 +31,5 @@ hostname=ipadcms.caixin.com
 
 
 
-var body = $response.body.replace(/isfree":0/g, 'isfree":1')
+var body = $response.body.replace(/isfree":0/g, 'isfree":1').replace(/isLimitFree":false/g, 'isLimitFree":true')
 $done({ body })
